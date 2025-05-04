@@ -94,7 +94,15 @@ pip3 install -r requirements.txt
 python3 api.py 
 
 ```
-
 Pour accèder à la route "documents", aller sur "http://127.0.0.1:7003/documents"
 
+#### lancement du front
+Pour le front, j'ai choisi Vue 3 avec divers packages, tels que Vite et Prettier, pour accélérer le développement. 
+Je n'ai pas opté pour TypeScript, car le projet est encore trop petit pour l'instant.
 
+```bash 
+cd front
+
+npm run dev
+
+```
