@@ -1,0 +1,44 @@
+DROP TABLE IF EXISTS document_tag;
+DROP TABLE IF EXISTS document;
+DROP TABLE IF EXISTS tag;
+
+CREATE TABLE document (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   number_of_employees INTEGER NOT NULL,
+   is_serious BOOLEAN NOT NULL,
+   version INTEGER NOT NULL,
+   name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tag (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE document_tag (
+   tag_id INTEGER NOT NULL,
+   document_id INTEGER NOT NULL,
+   FOREIGN KEY(tag_id) REFERENCES tag(id),
+   FOREIGN KEY(document_id) REFERENCES document(id)
+);
+
+INSERT INTO tag(name) VALUES ('fun');
+INSERT INTO tag(name) VALUES ('worker');
+INSERT INTO tag(name) VALUES ('huhu');
+
+INSERT INTO document(number_of_employees, is_serious, name, version) VALUES (14, 1, 'Scibids', 1);
+INSERT INTO document(number_of_employees, is_serious, name, version) VALUES (15, 1, 'Scibids', 2);
+
+INSERT INTO document_tag (tag_id, document_id) VALUES (1,1);
+INSERT INTO document_tag (tag_id, document_id) VALUES (2,1);
+
+INSERT INTO document_tag (tag_id, document_id) VALUES (1,2);
+INSERT INTO document_tag (tag_id, document_id) VALUES (3,2);
+
+
+
+INSERT INTO document(number_of_employees, is_serious, name, version) VALUES (89, 1, 'Another_comp', 1);
+INSERT INTO document(number_of_employees, is_serious, name, version) VALUES (54, 1, 'Another_comp', 2);
+
+INSERT INTO document_tag (tag_id, document_id) VALUES (2,3);
+INSERT INTO document_tag (tag_id, document_id) VALUES (1,4);

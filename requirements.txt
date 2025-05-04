@@ -1,0 +1,17 @@
+aniso8601==8.0.0
+black==25.1.0
+click==8.1.8
+Flask==1.1.2
+flask-cors==5.0.1
+Flask-RESTful==0.3.8
+itsdangerous==1.1.0
+Jinja2==2.11.2
+loguru==0.7.3
+MarkupSafe==1.1.1
+mypy_extensions==1.1.0
+packaging==25.0
+pathspec==0.12.1
+platformdirs==4.3.7
+pytz==2020.4
+six==1.15.0
+Werkzeug==1.0.1
